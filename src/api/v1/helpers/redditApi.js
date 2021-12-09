@@ -25,11 +25,13 @@ const app = {
         
         if(data.data)
           return data.data.children.map(data => data.data);
-        return [] 
+        return [{status: 404,err:true,msg:`No subreddit ${subreddit} found`}] 
       })
-      .catch(err => console.log(err))
-      
-     
+      .catch(err => {
+        console.log(err);
+        //log the error
+        return [{status: 502,err:true,msg:'Reddit server-side error'}];
+      })
   },
 
   trendingSubreddit : function(){
@@ -39,9 +41,15 @@ const app = {
       )
       .then(res => res.json())
       .then(data => {
-        return data.data.children.map(data => data.data);
+        if(data.data)
+          return data.data.children.map(data => data.data);
+        return [{status: 404,err:true,msg:'No popular subreddit list found'}];  
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err);
+        //log the error
+        return [{status: 502,err:true,msg:'Reddit server-side error'}];
+      })
   }
 };
 
