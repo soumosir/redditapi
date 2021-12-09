@@ -4,6 +4,11 @@ import reddit  from '../helpers/redditApi.js';
 // const Blog = mongoose.model('Blog');
 import express from 'express'; 
 const Router = express.Router();
+
+Router.get('/', requireLogin, async (req, res) => {
+    res.send("Hello World");
+});
+
 Router.get('/api/blogs/:id', requireLogin, async (req, res) => {
     // const blog = await Blog.findOne({
     //   _user: req.user.id,
