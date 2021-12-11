@@ -6,11 +6,11 @@ https://subreddit-search-app.herokuapp.com/api/trendingsubreddits
 
 API doccumentation for subreddit search app
 
-GET /api/blogs/<subreddit>
+GET /api/blogs/subreddit_title
 
 200
-    Get the top 20 subreddit posts searching by name
-    expected output structure [{subredditObject1},{subredditObject2},...]
+    - Get the top 20 subreddit posts searching by name
+      expected output structure [{subredditObject1},{subredditObject2},...]
 
 404  
     - on searching for a subreddit that donot exist 
@@ -24,15 +24,15 @@ GET /api/blogs/<subreddit>
       msg: `There are 0 post associated to subreddit ${subreddit}`
 502      
     - on reddit server being down
-    expected err msg 
-    msg: 'Reddit server-side error'
+      expected err msg 
+      msg: 'Reddit server-side error'
 
 
 GET /api/blogs/trendingsubreddits
 
 200
-    Get the top 20 trending subreddit titles
-    expected output structure [{title:<subreddit1>},{title:<subreddit2>},...]
+    - Get the top 20 trending subreddit titles
+      expected output structure [{title:<subreddit1>},{title:<subreddit2>},...]
 
 404  
     - if there are no trending subreddits
@@ -41,14 +41,14 @@ GET /api/blogs/trendingsubreddits
 
 502      
     - on reddit server being down
-    expected err msg 
-    msg: 'Reddit server-side error'    
+      expected err msg 
+      msg: 'Reddit server-side error'    
 
 GET *
 
 404
-   - on any random route not implemented
-   msg: 'Requested URL is not served yet!' });
+    - on any random route not implemented
+     msg: 'Requested URL is not served yet!' });
 
 Local development setup
 
