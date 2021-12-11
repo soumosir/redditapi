@@ -1,14 +1,15 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    // "extends": "eslint:recommended",
-    "extends": ["airbnb", "airbnb/hooks"],
-    "parserOptions": {
-        "ecmaVersion": 13,
-        "sourceType": "module"
-    },
-    "rules": {
-    }
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  // "extends": "eslint:recommended",
+  "extends": ["airbnb", "airbnb/hooks"],
+  "parserOptions": {
+    "ecmaVersion": 13,
+    "sourceType": "module"
+  },
+  "rules": {
+    "import/extensions": [0, "never", "always", "ignorePackages"]
+  }
 }

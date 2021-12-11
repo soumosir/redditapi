@@ -1,4 +1,4 @@
-import app from './server.js'
+import app from './server.js';
 // if (['production'].includes(process.env.NODE_ENV)) {
 //   app.use(express.static('client/build'));
 
@@ -9,5 +9,5 @@ import app from './server.js'
 // }
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-  console.log(`Listening on port`, PORT);
+  console.log('Listening on port', PORT);
 });
