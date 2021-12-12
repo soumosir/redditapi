@@ -7,7 +7,7 @@ the api app demo can be found in :-
 
 API doccumentation for subreddit search app
 
-    GET /api/blogs/subreddit_title
+    GET /api/blogs/:subreddit_title
 
         200
             - Get the top 20 subreddit posts searching by name
